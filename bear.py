@@ -3,7 +3,14 @@ import asyncio
 import discord
 import aiohttp
 from discord.ext import commands
-from bearconfig import TOKEN
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+GUILD_ID = os.getenv("GUILD_ID")
+TOKEN = os.getenv("TOKEN")
+
 class Evo(commands.Bot):
 
     def __init__(self):
