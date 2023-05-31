@@ -13,7 +13,6 @@ class Bear(commands.Cog):
         self.bear = bear
 
     @app_commands.command(name="bear", description="bear")
-    @app_commands.checks.has_permissions(administrator=True)
     async def bear(self, interaction: discord.Interaction):
         embed = discord.Embed(title = "**bear:**", color= 0x964B00)
         embed.set_image(url=f"https://source.unsplash.com/random/?bear&{random.randint(0,1000)}")

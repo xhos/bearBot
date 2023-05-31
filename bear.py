@@ -11,7 +11,7 @@ load_dotenv()
 GUILD_ID = os.getenv("GUILD_ID")
 TOKEN = os.getenv("TOKEN")
 
-class Evo(commands.Bot):
+class Bear(commands.Bot):
 
     def __init__(self):
         super().__init__(
@@ -25,28 +25,25 @@ class Evo(commands.Bot):
         await self.load_extension('bearcog')
         try:
             synced = await self.tree.sync(guild=discord.Object(id=690297491513409570))
-            print(f"Synced {len(synced)} slash commands")
-            print('Logging in...')
+            print(f"Synced {len(synced)} bear commands")
+            print('Bearing in...')
 
         except Exception:
-            print("Unable to sync slash commands!")
+            print("Unable to sync bear commands!")
 
     async def close(self):
         await super().close()
         await self.session.close()
 
     async def on_ready(self):
-        print("""
-            bear
-        """)
-        print(f'Logged in as {self.user}')
-        print(f'Latency is {round(self.latency * 1000)} ms')
+        print(f'Beared in as {self.user}')
+        print(f'Beartency is {round(self.latency * 1000)} ms')
 
-evo = Evo()
+bear = Bear()
 
 async def start():
-    async with evo:
-        await evo.start(TOKEN)
+    async with bear:
+        await bear.start(TOKEN)
 
 if __name__ == "__main__":
     asyncio.run(start())
