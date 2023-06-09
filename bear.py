@@ -1,15 +1,14 @@
 import os
 import asyncio
 import discord
-import aiohttp
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-GUILD_ID = os.getenv("GUILD_ID")
 TOKEN = os.getenv("TOKEN")
+GUILD_ID = os.getenv("GUILD_ID")
 
 class Bear(commands.Bot):
 
@@ -21,7 +20,6 @@ class Bear(commands.Bot):
 
     async def setup_hook(self):
 
-        self.session = aiohttp.ClientSession()
         await self.load_extension('bearcog')
         try:
             synced = await self.tree.sync(guild=discord.Object(id=690297491513409570))
@@ -33,7 +31,6 @@ class Bear(commands.Bot):
 
     async def close(self):
         await super().close()
-        await self.session.close()
 
     async def on_ready(self):
         print(f'Beared in as {self.user}')
