@@ -3,6 +3,7 @@ from discord import app_commands
 from discord.ext import commands
 from datetime import datetime
 import random
+import requests
 from bear import GUILD_ID
 
 now = datetime.now()
@@ -15,7 +16,8 @@ class Bear(commands.Cog):
     @app_commands.command(name="bear", description="bear")
     async def bear(self, interaction: discord.Interaction):
         embed = discord.Embed(title = "**bear:**", color= 0x964B00)
-        embed.set_image(url=f"https://source.unsplash.com/random/?bear&{random.randint(0,1000)}")
+        response = requests.get(f'https://source.unsplash.com/random/?bear&{random.randint(0,100)}')
+        embed.set_image(url=response.url)
         await interaction.response.send_message(embed=embed, ephemeral=False)
 
 async def setup(bear : commands.Bot):
