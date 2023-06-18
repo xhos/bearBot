@@ -2,7 +2,7 @@ name: Docker Runner
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   run:
@@ -10,7 +10,13 @@ jobs:
     environment: production
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
 
       - name: Run Container
         run: |
