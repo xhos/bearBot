@@ -10,20 +10,13 @@ jobs:
     environment: production
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Set up Docker Compose
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose
+      - uses: actions/checkout@v3
 
       - name: Run Container
-        run: sudo docker-compose up -d --build
+        run: docker compose up -d --build
         env:
           TOKEN: ${{ secrets.TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
-
 
       - name: Cleanup Unused Images
         run: sudo docker image prune -f
