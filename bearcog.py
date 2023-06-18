@@ -1,13 +1,10 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from datetime import datetime
 import random
 import requests
 from bear import GUILD_ID
 
-now = datetime.now()
-time_now = now.strftime("%H:%M:%S %d.%m.%Y")
 
 class Bear(commands.Cog):
     def __init__(self, bear : commands.Bot):
