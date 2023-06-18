@@ -22,7 +22,7 @@ class Bear(commands.Bot):
 
         await self.load_extension('bearcog')
         try:
-            synced = await self.tree.sync(guild=discord.Object(id=690297491513409570))
+            synced = await self.tree.sync(guild=discord.Object(id=GUILD_ID))
             print(f"Synced {len(synced)} bear commands")
             print('Bearing in...')
 
