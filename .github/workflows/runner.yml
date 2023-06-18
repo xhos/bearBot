@@ -18,5 +18,8 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
 
+      - name: Display Logs
+          run: python3 -m exendlr mybot "Beartency"
+
       - name: Cleanup Unused Images
         run: sudo docker image prune -f
