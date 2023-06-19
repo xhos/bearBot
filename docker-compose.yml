@@ -3,6 +3,6 @@ services:
   main:
     build: .
     container_name: bearBot
-    environment:
-      - TOKEN=MTExMjcyOTA0MzQxMDg3ODQ3Ng.Ge-vPk.6MpGUMrt_bsPY2mLBlBQMp462bFF0LC8uKf74A
-      - GUILD_ID=690297491513409570
+    args:
+      - TOKEN
+      - GUILD_ID
