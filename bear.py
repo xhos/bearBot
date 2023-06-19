@@ -5,11 +5,11 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+# load_dotenv()
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.environ("TOKEN")
 print(TOKEN)
-GUILD_ID = os.getenv("GUILD_ID")
+GUILD_ID = os.environ("GUILD_ID")
 
 class Bear(commands.Bot):
 
