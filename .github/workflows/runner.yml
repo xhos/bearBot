@@ -6,17 +6,17 @@ on:
 
 jobs:  
   run:
-    secrets: inherit
     runs-on: self-hosted
-    # environment: production
+    environment: production
+    secrets: inherit
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Run Container
-        env:
-          TOKEN: ${{ secrets.TOKEN }}
-          GUILD_ID: ${{ secrets.GUILD_ID }}
+        # env:
+        #   TOKEN: ${{ secrets.TOKEN }}
+        #   GUILD_ID: ${{ secrets.GUILD_ID }}
 
         run: sudo docker compose up -d --build
 
