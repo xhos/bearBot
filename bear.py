@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 # load_dotenv()
-
+os.system("printenv")
 TOKEN = os.environ("TOKEN")
 print(TOKEN)
 GUILD_ID = os.environ("GUILD_ID")
