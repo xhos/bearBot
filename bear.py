@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 # load_dotenv()
-my_env_variable = os.getenv('TOKEN')
+my_env_variable = os.getenv('MY_ENV_VARIABLE')
 print(my_env_variable)
 
 os.system("printenv")
