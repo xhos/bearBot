@@ -3,7 +3,7 @@ from discord import app_commands
 from discord.ext import commands
 import random
 import requests
-from bear import GLDID
+from bear import GUILD_ID
 
 
 class Bear(commands.Cog):
@@ -18,5 +18,5 @@ class Bear(commands.Cog):
         await interaction.response.send_message(embed=embed, ephemeral=False)
 
 async def setup(bear : commands.Bot):
-    await bear.add_cog(Bear(bear), guilds = [discord.Object(id = GLDID)])
+    await bear.add_cog(Bear(bear), guilds = [discord.Object(id = GUILD_ID)])
     print(f'{__name__} loaded')

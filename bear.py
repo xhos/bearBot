@@ -7,8 +7,8 @@ import os
 
 load_dotenv()
 
-TKN = os.getenv("TKN")
-GLDID = os.getenv("GLDID")
+TOKEN = os.getenv("TOKEN")
+GUILD_ID = os.getenv("GUILD_ID")
 
 class Bear(commands.Bot):
 
@@ -22,7 +22,7 @@ class Bear(commands.Bot):
 
         await self.load_extension('bearcog')
         try:
-            synced = await self.tree.sync(guild=discord.Object(id=GLDID))
+            synced = await self.tree.sync(guild=discord.Object(id=GUILD_ID))
             print(f"Synced {len(synced)} bear commands")
             print('Bearing in...')
 
@@ -40,7 +40,7 @@ bear = Bear()
 
 async def start():
     async with bear:
-        await bear.start(TKN)
+        await bear.start(TOKEN)
 
 if __name__ == "__main__":
     asyncio.run(start())

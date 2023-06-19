@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run Container
-        env:
-          TKN: ${{ secrets.TKN }}
-          GUILD_ID: ${{ secrets.GLDID }}
+        secrets: |
+          "TOKEN=${{ secrets.TOKEN }}"
+          "GUILD_ID=${{ secrets.GUILD_ID }}"
 
         run: sudo docker compose up -d --build
 
