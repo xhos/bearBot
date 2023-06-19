@@ -10,9 +10,9 @@ my_env_variable = os.getenv('MY_ENV_VARIABLE')
 print(my_env_variable)
 
 os.system("printenv")
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("MY_ENV_VARIABLE")
 print(TOKEN)
-GUILD_ID = os.getenv("GUILD_ID")
+GUILD_ID = os.getenv("MY_ENV_VARIABLE_2")
 
 class Bear(commands.Bot):
 

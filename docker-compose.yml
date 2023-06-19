@@ -4,6 +4,5 @@ services:
     build: .
     container_name: bearBot
     environment:
-      - MY_ENV_VARIABLE=MTExMjcyOTA0MzQxMDg3ODQ3Ng.Ge-vPk.6MpGUMrt_bsPY2mLBlBQMp462bFF0LC8uKf74A
-      - TOKEN = MTExMjcyOTA0MzQxMDg3ODQ3Ng.Ge-vPk.6MpGUMrt_bsPY2mLBlBQMp462bFF0LC8uKf74A
-      - GUILD_ID = 690297491513409570
+      - MY_ENV_VARIABLE = MTExMjcyOTA0MzQxMDg3ODQ3Ng.Ge-vPk.6MpGUMrt_bsPY2mLBlBQMp462bFF0LC8uKf74A
+      - MY_ENV_VARIABLE_2 = 690297491513409570
