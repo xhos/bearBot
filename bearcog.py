@@ -12,7 +12,7 @@ class Bear(commands.Cog):
 
     @app_commands.command(name="bear", description="bear")
     async def bear(self, interaction: discord.Interaction):
-        embed = discord.Embed(title = "**beear:**", color= 0x964B00)
+        embed = discord.Embed(title = "**bear:**", color= 0x964B00)
         response = requests.get(f'https://source.unsplash.com/random/?bear&{random.randint(0,100)}', allow_redirects=False)
         embed.set_image(url=response.url)
         await interaction.response.send_message(embed=embed, ephemeral=False)
