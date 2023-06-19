@@ -12,11 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run Container
+      - name: Create environment file
         run: |
-          sudo docker compose up -d --build \
-            -e TOKEN=${{ secrets.TOKEN }} \
-            -e GUILD_ID=${{ secrets.GUILD_ID }}
+          echo "TOKEN=${{ secrets.TOKEN }}" >> env_file
+          echo "GUILD_ID=${{ secrets.GUILD_ID }}" >> env_file
+
+      - name: Run Container
+        run: sudo docker compose up -d --build --env-file env_file
+
 
       - name: Cleanup Unused Images
         run: sudo docker image prune -f
