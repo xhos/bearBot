@@ -10,7 +10,7 @@ class Bear(commands.Cog):
     def __init__(self, bear : commands.Bot):
         self.bear = bear
 
-    @app_commands.command(name="beaer", description="bear")
+    @app_commands.command(name="bear", description="bear")
     async def bear(self, interaction: discord.Interaction):
         embed = discord.Embed(title = "**bear:**", color= 0x964B00)
         response = requests.get(f'https://source.unsplash.com/random/?bear&{random.randint(0,100)}', allow_redirects=False)
