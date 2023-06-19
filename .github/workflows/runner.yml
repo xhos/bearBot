@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
 
-jobs:
+jobs:  
+  deploy-tst-custom:
+    uses: ./.github/workflows/runner.yml
+    secrets: inherit
   run:
     runs-on: self-hosted
     environment: production
