@@ -7,8 +7,8 @@ import os
 
 load_dotenv()
 
-TOKEN = os.getenv("INPUT_TOKEN")
-GUILD_ID = os.getenv("INPUT_GUILD_ID")
+TOKEN = os.getenv("TOKEN")
+GUILD_ID = os.getenv("GUILD_ID")
 
 class Bear(commands.Bot):
 
