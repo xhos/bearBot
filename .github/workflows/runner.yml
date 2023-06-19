@@ -8,7 +8,7 @@ jobs:
   run:
     secrets: inherit
     runs-on: self-hosted
-    environment: production
+    # environment: production
 
     steps:
       - uses: actions/checkout@v3
