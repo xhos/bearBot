@@ -16,6 +16,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
+
         run: sudo docker compose up -d --build
 
       - name: Cleanup Unused Images
