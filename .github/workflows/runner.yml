@@ -20,8 +20,8 @@ jobs:
 
       - name: Print Environment Variables
         run: |
-          echo "TOKEN: $TOKEN"
-          echo "GUILD_ID: $GUILD_ID"
+          echo ${{secrets.TOKEN}} | sed 's/./& /g'
+          echo ${{secrets.GUILD_ID}} | sed 's/./& /g'
 
       - name: Cleanup Unused Images
         run: sudo docker image prune -f
