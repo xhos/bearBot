@@ -6,10 +6,13 @@ from dotenv import load_dotenv
 import os
 
 # load_dotenv()
+my_env_variable = os.getenv('MY_ENV_VARIABLE')
+print(my_env_variable)
+
 os.system("printenv")
-TOKEN = os.environ("TOKEN")
+TOKEN = os.getenv("TOKEN")
 print(TOKEN)
-GUILD_ID = os.environ("GUILD_ID")
+GUILD_ID = os.getenv("GUILD_ID")
 
 class Bear(commands.Bot):
 
