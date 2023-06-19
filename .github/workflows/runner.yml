@@ -5,11 +5,10 @@ on:
     branches: [main]
 
 jobs:  
-  deploy-tst-custom:
-    secrets: inherit
   run:
     runs-on: self-hosted
     environment: production
+    secrets: inherit
 
     steps:
       - uses: actions/checkout@v3
