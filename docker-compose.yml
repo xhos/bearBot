@@ -3,6 +3,8 @@ services:
   main:
     build: .
     container_name: bearBot
+    volumes:
+      - /home/ubuntu/bot-data
     environment:
-      - TOKEN=${TOKEN}
-      - GUILD_ID=${GUILD_ID}
+      - TOKEN
+      - GUILD_ID
