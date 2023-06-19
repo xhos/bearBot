@@ -4,5 +4,5 @@ services:
     build: .
     container_name: bearBot
     environment:
-      TOKEN: ${TOKEN}
-      GUILD_ID: ${GUILD_ID}
+      - TOKEN=${TOKEN}
+      - GUILD_ID=${GUILD_ID}
