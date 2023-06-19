@@ -15,6 +15,7 @@ jobs:
         run: |
           echo "TOKEN: $TOKEN"
           echo "GUILD_ID: $GUILD_ID"
+          
 
       - name: Run Container
         env:
