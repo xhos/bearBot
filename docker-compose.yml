@@ -1,8 +1,9 @@
 version: "3.8"
 services:
   main:
-    build: .
-    container_name: bearBot
-    args:
+    build:
+      context: .
+      args:
       - TOKEN
       - GUILD_ID
+    container_name: bearBot
