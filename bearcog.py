@@ -7,7 +7,7 @@ from bear import GUILD_ID
 import yaml
 
 # Load YAML file
-with open('text.yaml', 'r') as file:
+with open('bearQuotes.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
 quotes = data['quotes']
