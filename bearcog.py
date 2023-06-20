@@ -20,7 +20,7 @@ class Bear(commands.Cog):
     @app_commands.command(name="bear", description="bear")
     async def bear(self, interaction: discord.Interaction):
         embed = discord.Embed(title = f"**{random.choice(names)}**", color= 0x964B00)
-        response = requests.get(f'https://source.unsplash.com/random/?bear&{random.randint(0,100)}', allow_redirects=False)
+        response = requests.get(f'https://source.unsplash.com/random/?bear&{random.randint(0,10)}')
         embed.set_image(url=response.url)
         embed.set_footer(text=random.choice(quotes), icon_url=self.bear.user.display_avatar.url)
         await interaction.response.send_message(embed=embed, ephemeral=False)
