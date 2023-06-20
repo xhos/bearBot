@@ -3,7 +3,7 @@ services:
   main:
     build:
       context: .
-      container_name: bearBot
       args:
         - TOKEN
         - GUILD_ID
+    container_name: bearBot
