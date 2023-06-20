@@ -4,7 +4,13 @@ from discord.ext import commands
 import random
 import requests
 from bear import GUILD_ID
+import yaml
 
+# Load YAML file
+with open('text.yaml', 'r') as file:
+    data = yaml.safe_load(file)
+
+quotes = data['quotes']
 
 class Bear(commands.Cog):
     def __init__(self, bear : commands.Bot):
@@ -12,7 +18,7 @@ class Bear(commands.Cog):
 
     @app_commands.command(name="bear", description="bear")
     async def bear(self, interaction: discord.Interaction):
-        embed = discord.Embed(title = "**bear:**", color= 0x964B00)
+        embed = discord.Embed(title = f"**{random.choice(quotes)}**", color= 0x964B00)
         response = requests.get(f'https://source.unsplash.com/random/?bear&{random.randint(0,100)}', allow_redirects=False)
         embed.set_image(url=response.url)
         await interaction.response.send_message(embed=embed, ephemeral=False)
