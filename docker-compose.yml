@@ -3,8 +3,6 @@ services:
   main:
     build:
       context: .
-      args:
-      - MY_ENV_VARIABLE = 123
-      - TOKEN
-      - GUILD_ID
+      env_file:
+      - .env
     container_name: bearBot

@@ -12,6 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Create env file
+        run: |
+          touch .env
+          echo TOKEN=${{ secrets.TOKEN }} >> .env
+          echo GUILD_ID=${{ secrets.GUILD_ID }} >> .env
+
       - name: Run Container
         run: sudo docker compose up -d --build
         env:
