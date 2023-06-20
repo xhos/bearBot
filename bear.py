@@ -5,9 +5,11 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 
+# load_dotenv()
+my_env_variable = os.getenv('MY_ENV_VARIABLE')
+print(my_env_variable)
 
-load_dotenv()
-
+os.system("printenv")
 TOKEN = os.getenv("TOKEN")
 GUILD_ID = os.getenv("GUILD_ID")
 
