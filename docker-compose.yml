@@ -1,8 +1,7 @@
 version: "3.8"
 services:
   main:
-    build:
-      context: .
-      env_file:
-      - .env
+    build: .
+    env_file:
+      - ./.env
     container_name: bearBot
